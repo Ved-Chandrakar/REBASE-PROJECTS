@@ -1,0 +1,164 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+
+header {
+    background-color: #1e293b;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    color: #ff2020;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    width: 300px;
+    background: #334155;
+    color: white;
+    outline: none;
+}
+
+button {
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: none;
+    background-color: #ff2b2b;
+    color: #0f172a;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #ff3235;
+}
+
+#MovieGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.Movie-Card {
+    background-color: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.Movie-Card:hover {
+    transform: translateY(-10px);
+}
+
+.Movie-Card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.Movie-Info {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Movie-Info h3 {
+    margin: 0;
+    font-size: 0.9rem;
+    max-width: 80%;
+}
+
+.rating {
+    background: #0f172a;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fbbf24;
+}
+
+.Loader-Container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 100;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #1e293b;
+    margin: 5% auto;
+    padding: 0;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#modalDetails {
+    padding: 30px;
+}
+
+#modalDetails h2 {
+    margin-top: 0;
+    color: #38bdf8;
+}
+
+#modalDetails p {
+    line-height: 1.6;
+    color: #cbd5e1;
+}

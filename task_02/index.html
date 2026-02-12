@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MovieStream</h1>
+        <div class="Search-Box">
+            <input type="text" id="SearchInput" placeholder="Search movies...">
+            <button id="SearchBtn">Search</button>
+        </div>
+    </header>
+
+    <main id="MovieGrid"></main>
+    
+    <div class="Loader-Container">
+        <button id="LoadMoreBtn" style="display: none;">Load More</button>
+    </div>
+
+    <div id="MovieModal" class="Modal">
+        <div class="Modal-Content">
+            <span class="Close-Btn">&times;</span>
+            <div id="ModalDetails"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
